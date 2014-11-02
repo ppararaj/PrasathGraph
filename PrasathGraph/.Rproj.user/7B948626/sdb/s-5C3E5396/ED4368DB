@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{downstreamSearcher}\n\\alias{downstreamSearcher}\n%- Also NEED an '\\alias' for EACH other topic documented here.\n\\title{\ndownstreamSearcher\n}\n\\description{\n%%  ~~ A concise (1-5 lines) description of what the function does. ~~\n}\n\\usage{\ndownstreamSearcher(graph, node)\n}\n%- maybe also 'usage' for other objects documented here.\n\\arguments{\n  \\item{graph}{\n%%     ~~Describe \\code{graph} here~~\n}\n  \\item{node}{\n%%     ~~Describe \\code{node} here~~\n}\n}\n\\details{\n%%  ~~ If necessary, more details than the description above ~~\n}\n\\value{\n%%  ~Describe the value returned\n%%  If it is a LIST, use\n%%  \\item{comp1 }{Description of 'comp1'}\n%%  \\item{comp2 }{Description of 'comp2'}\n%% ...\n}\n\\references{\n%% ~put references to the literature/web site here ~\n}\n\\author{\n%%  ~~who you are~~\n}\n\\note{\n%%  ~~further notes~~\n}\n\n%% ~Make other sections like Warning with \\section{Warning }{....} ~\n\n\\seealso{\n%% ~~objects to See Also as \\code{\\link{help}}, ~~~\n}\n\\examples{\n##---- Should be DIRECTLY executable !! ----\n##-- ==>  Define data, use random,\n##--\tor do  help(data=index)  for the standard data sets.\n\n## The function is currently defined as\nfunction (graph, node) \n{\n    require(graph)\n    outPath <- unlist(edges(graph)[node])\n    alreadyChecked <- node\n    while (length(outPath) > 0) {\n        addToOutPath <- vector()\n        for (i in 1:length(outPath)) {\n            currNode <- outPath[i]\n            if (currNode \\%in\\% alreadyChecked) {\n                next\n            }\n            moreConnections <- unlist(edges(graph)[currNode])\n            moreConnections <- moreConnections[!(moreConnections \\%in\\% \n                alreadyChecked)]\n            if (length(moreConnections)) {\n                addToOutPath <- c(addToOutPath, moreConnections)\n            }\n            alreadyChecked <- c(alreadyChecked, currNode)\n        }\n        outPath <- addToOutPath[!(addToOutPath \\%in\\% alreadyChecked)]\n    }\n    alreadyChecked <- unname(alreadyChecked)\n    return(alreadyChecked)\n  }\n}\n% Add one or more standard keywords, see file 'KEYWORDS' in the\n% R documentation directory.\n\\keyword{ ~kwd1 }\n\\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line\n",
+    "created" : 1407299486083.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3797079840",
+    "id" : "ED4368DB",
+    "lastKnownWriteTime" : 1407299491,
+    "path" : "~/OCI/PrasathGraph/man/downstreamSearcher.Rd",
+    "project_path" : "man/downstreamSearcher.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

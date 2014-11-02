@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: PrasathGraph\nType: Package\nTitle: PrasathGraph\nVersion: 1.0\nDate: 2014-08-05\nAuthor: Prasath Pararajalingam\nMaintainer: Prasath Pararajalingam <ppararaj@gmail.com>\nDescription: Function to produce pathway heatmaps and graphNEL parsing functions.\nLicense: GPL-2\nDepends: graph\nSuggests: graphite",
+    "created" : 1407298663051.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3426696155",
+    "id" : "F17B9644",
+    "lastKnownWriteTime" : 1407298775,
+    "path" : "~/OCI/PrasathGraph/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}

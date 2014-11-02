@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{PrasathGraph-package}\n\\alias{PrasathGraph-package}\n\\alias{PrasathGraph}\n\\docType{package}\n\\title{ PrasathGraph }\n\\description{\n\nThis package contains functions to visualize pathway heatmaps and to manipulate pathway \ngraphNEL objects, such as identifying upstream and downstream nodes.\n\n}\n\\details{\n\\tabular{ll}{\nPackage: \\tab PrasathGraph\\cr\nType: \\tab Package\\cr\nVersion: \\tab 1.0\\cr\nDate: \\tab 2014-08-05\\cr\nLicense: \\tab GPL-2\\cr\n}\n\n}\n\\author{\nPrasath Pararajalingam\n\nMaintainer: Prasath Pararajalingam <ppararaj@gmail.com>\n\n}\n\\references{\n~~ Literature or other references for background information ~~\n}\n\n\\keyword{ package }\n\\seealso{\n~~ Optional links to other man pages, e.g. ~~\n~~ \\code{\\link[<pkg>:<pkg>-package]{<pkg>}} ~~\n}\n\\examples{\n~~ simple examples of the most important functions ~~\n}\n",
+    "created" : 1407299380981.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4289410903",
+    "id" : "A457F9D2",
+    "lastKnownWriteTime" : 1407299434,
+    "path" : "~/OCI/PrasathGraph/man/PrasathGraph-package.Rd",
+    "project_path" : "man/PrasathGraph-package.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

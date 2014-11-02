@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{pathwayHeatmap}\n\\alias{pathwayHeatmap}\n%- Also NEED an '\\alias' for EACH other topic documented here.\n\\title{\npathwayHeatmap\n}\n\\description{\n%%  ~~ A concise (1-5 lines) description of what the function does. ~~\n}\n\\usage{\npathwayHeatmap(graph, layout = \"fdp\", de, cols, subGList = list(), nodeAttrs = list(), attrs = list())\n}\n%- maybe also 'usage' for other objects documented here.\n\\arguments{\n  \\item{graph}{\n%%     ~~Describe \\code{graph} here~~\n}\n  \\item{layout}{\n%%     ~~Describe \\code{layout} here~~\n}\n  \\item{de}{\n%%     ~~Describe \\code{de} here~~\n}\n  \\item{cols}{\n%%     ~~Describe \\code{cols} here~~\n}\n  \\item{subGList}{\n%%     ~~Describe \\code{subGList} here~~\n}\n  \\item{nodeAttrs}{\n%%     ~~Describe \\code{nodeAttrs} here~~\n}\n  \\item{attrs}{\n%%     ~~Describe \\code{attrs} here~~\n}\n}\n\\details{\n%%  ~~ If necessary, more details than the description above ~~\n}\n\\value{\n%%  ~Describe the value returned\n%%  If it is a LIST, use\n%%  \\item{comp1 }{Description of 'comp1'}\n%%  \\item{comp2 }{Description of 'comp2'}\n%% ...\n}\n\\references{\n%% ~put references to the literature/web site here ~\n}\n\\author{\n%%  ~~who you are~~\n}\n\\note{\n%%  ~~further notes~~\n}\n\n%% ~Make other sections like Warning with \\section{Warning }{....} ~\n\n\\seealso{\n%% ~~objects to See Also as \\code{\\link{help}}, ~~~\n}\n\\examples{\n##---- Should be DIRECTLY executable !! ----\n##-- ==>  Define data, use random,\n##--\tor do  help(data=index)  for the standard data sets.\n\n## The function is currently defined as\nfunction (graph, layout = \"fdp\", de, cols, subGList = list(), \n    nodeAttrs = list(), attrs = list()) \n{\n    require(graph)\n    deKID <- names(de)\n    allKID <- all\n    logfc <- de[match(nodes(graph), deKID)]\n    names(logfc) <- nodes(graph)\n    logfc[is.na(logfc)] <- 0\n    incol <- round(logfc + trunc(length(cols)/2))\n    incol[incol > length(cols)] <- length(cols)\n    incol[incol < 0] <- 1\n    logcol <- cols[incol]\n    logcol[logfc == 0] <- \"darkgrey\"\n    names(logcol) <- names(logfc)\n    nAttrs <- nodeAttrs\n    nAttrs$fillcolor <- logcol\n    if (!length(globalAttrs)) {\n        attrs = list(node = list(shape = \"circle\", fontsize = 20, \n            fixedsize = T), edge = list(arrowsize = \"0.6\"))\n    }\n    if (length(subGList)) {\n        plot(graph, layout, subGList = subGList, nodeAttrs = nAttrs, \n            attrs = attrs)\n    }\n    else {\n        plot(graph, layout, nodeAttrs = nAttrs, attrs = attrs)\n    }\n  }\n}\n% Add one or more standard keywords, see file 'KEYWORDS' in the\n% R documentation directory.\n\\keyword{ ~kwd1 }\n\\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line\n",
+    "created" : 1407299503505.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3910645322",
+    "id" : "66ED2733",
+    "lastKnownWriteTime" : 1407299533,
+    "path" : "~/OCI/PrasathGraph/man/pathwayHeatmap.Rd",
+    "project_path" : "man/pathwayHeatmap.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}
